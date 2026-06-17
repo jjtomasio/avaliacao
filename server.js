@@ -152,7 +152,7 @@ app.patch ("/api/filmes/:id/visto", async (req,res) =>{
     }
     const query2 = "DELETE FROM filmes WHERE id = ?"
     const [resultado] = await pool.execute(query2, [id])
-    res.status(200).json({mensagem: "Filme apagado com sucesso!"})
+    res.status(204).json()
 })
 
 
