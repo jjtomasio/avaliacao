@@ -1,9 +1,9 @@
 17-06-2026 avaliaçao
 
-Criar BD filmes (semelhante a musicas)
+Criar BD filmes 
 criar endpoints
 
-entregar no link
+entregar no link fornecido pelo teams
 - carregar link do github
 - carregar printscreen dos Requests do Postman
 
