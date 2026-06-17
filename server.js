@@ -24,18 +24,20 @@
 // Testa tudo no Postman, Thunder Client ou Bruno.
 
 
-require("dotenv").config(); //importar a biblioteca dotenv para carregar as variáveis de ambiente do arquivo .env
+require("dotenv").config(); 
+
   const express = require('express');
-//import express from 'express';//importar a biblioteca express utilizando a sintaxe de módulos ES6
-const app = express(); //executar a função express para criar uma aplicação
-const mysql = require('mysql2/promise'); //importar a biblioteca mysql2 para conectar ao banco de dados MySQL
-//app.use(express.json());//util para evitar erros de sintaxe ao enviar dados em formato JSON no corpo da requisição
-const PORT = 3000;  //definir a porta onde o servidor irá escutar as requisições
-const path = require("path") // importar a biblioteca path para lidar com caminhos de arquivos e diretórios de forma segura e compatível com diferentes sistemas operacionais
-app.use(express.static(path.join(__dirname,"frontend")))//para servir os ficheiros estáticos do frontend, como o index.html, css e js, a partir da pasta "frontend" localizada no mesmo diretório do servidor. O path.join é utilizado para garantir que o caminho seja construído corretamente independentemente do sistema operacional.
-//cors é necessário para permitir que o frontend aceda à API, caso contrário, o navegador bloqueia as requisições por questões de segurança. O CORS (Cross-Origin Resource Sharing) é um mecanismo que permite controlar quais origens (domínios) podem acessar os recursos do servidor. No Express, podemos usar o middleware "cors" para configurar isso facilmente. Por exemplo, podemos instalar o pacote "cors" e depois usá-lo no nosso servidor com app.use(cors()), permitindo que qualquer origem acesse a API. Se quisermos restringir o acesso a apenas algumas origens específicas, podemos passar opções para o middleware cors, como app.use(cors({ origin: 'http://localhost:5500' })) para permitir apenas requisições do Live Server.
+
+const app = express(); 
+const mysql = require('mysql2/promise'); 
+
+const PORT = 3000;  
+const path = require("path") 
+app.use(express.static(path.join(__dirname,"frontend")))
+
+
 const cors = require('cors');
-app.use(cors()); // Ativa o CORS para todas as portas
+app.use(cors()); 
 app.use(express.json());
 
 
